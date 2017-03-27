@@ -7,4 +7,6 @@
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="linkedList.linkedList.LinkedList"/>
+<fullyQualifiedTypeName name="linkedList.linkedList.LinkedList.Node"/>
 </qualifiedTypeNameHistroy>
