@@ -38,13 +38,17 @@ public class MaxHeap
    }
    
    
-   
+   //Since we have a keys[] to store key for each student
+   //I save the key value in index key when every time we insert a student
+   //If we siftUp or mixHeapify, we swap the two student, in the same time
+   //we swap the two keys for these two students.
    public void insert(Student elt)
    {
       //Please write me.
-	  int key = size() + 1;
-	  students.add(key - 1, elt);
-	  siftUp(key - 1);
+	  int key = size();
+	  elt.keys = key;
+	  students.add(key, elt);
+	  siftUp(key);
    }
    
    public void siftUp(int index) {
@@ -55,7 +59,6 @@ public class MaxHeap
 		   if (students.get(parentIndex).gpa() < students.get(index).gpa()) {
 			   //My idea in here is since I know these two will switch there position in the heap
 			   //then I switch there key value.
-			   students.get(index).setKey(parentIndex);
 			   swap(index, parentIndex);
 			   siftUp(parentIndex);
 		   }
@@ -63,13 +66,15 @@ public class MaxHeap
 	   
    }
    
+   //Set the newGPA to student s.
+   //Apply siftUp and maxHeapify, if its value bigger than its parents,
+   //siftUp applied, otherwise maxHeapify applied.
    public void changeKey(Student s, double newGPA)
    {
       //Please write me.
-	  int key = s.getkey();
 	  s.setGPA(newGPA);
-	  siftUp(key);
-	  maxHeapify(key);
+	  siftUp(s.keys);
+	  maxHeapify(s.keys);
    }
 
    private int parent(int index)
@@ -92,11 +97,17 @@ public class MaxHeap
       return students.size();
    }
    
+   //Add keys swap. Also swap the keys value during each exchange.
    private void swap(int from, int to)
    {
       Student val = students.get(from);
+      Student val2 = students.get(to);
+      int temp = val.keys;
+      val.keys = val2.keys;
+      val2.keys = temp;
       students.set(from,  students.get(to));
       students.set(to,  val);
+      
    }
    
    private void maxHeapify(int index)

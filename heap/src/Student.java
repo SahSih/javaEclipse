@@ -3,7 +3,7 @@ public class Student implements Comparable<Student>
    private String name;
    private double gpa = 0;
    private int units = 0;
-   private int key;
+   public int keys;
    
    public Student(String name)
    {
@@ -17,16 +17,7 @@ public class Student implements Comparable<Student>
       this.gpa = gpa;
 
    }
-   
-   //Add setKey and getKey to identify 
-   //the position of each student in the heap
-   public void setKey(int a){
-	   key = a;
-   }
-   
-   public int getkey(){
-	   return key;
-   }
+
    
    public String getName()
    {
