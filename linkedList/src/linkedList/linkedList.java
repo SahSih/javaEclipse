@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.List;
+
 public class linkedList {
 	public static class LinkedList {
 		public Node head;
@@ -74,6 +76,41 @@ public class linkedList {
 		
 	}
 	
+	public static void delPosition(int position, LinkedList list) {
+		if (list.head == null) return;
+		LinkedList.Node temp = list.head;
+		if (position == 0) {
+			list.head = temp.next;
+		}
+		for (int i = 0; temp != null && i < position - 1; i++)
+			temp = temp.next;
+		//LinkedList.Node next = temp.next.next;
+		//temp.next = next;
+		temp.next = temp.next.next;
+	}
+	
+	public static int getCount(LinkedList list) {
+		LinkedList.Node temp = list.head;
+		int count = 0;
+		while (temp != null) {
+			count++;
+			temp = temp.next;
+		}
+		System.out.println(count);
+		return count;
+	}
+	
+	public static int recurCount(LinkedList.Node temp) {
+		if (temp == null) return 0;
+		return 1 + recurCount(temp.next);
+	}
+	
+	public static void recurCountRes(LinkedList list) {
+		System.out.println(recurCount(list.head));
+	}
+	
+	public static void 
+	
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		
@@ -90,6 +127,10 @@ public class linkedList {
 		append(list, 6);
 		insertBefore(second, 7, list);
 		deleteNode(6, list);
+		delPosition(5, list);
+		
+		getCount(list);
+		recurCountRes(list);
 		
 		
 		printList(list);	
