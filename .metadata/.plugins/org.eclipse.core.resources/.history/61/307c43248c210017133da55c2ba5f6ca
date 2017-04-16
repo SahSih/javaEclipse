@@ -1,0 +1,93 @@
+import java.awt.*;
+import java.awt.geom.*;
+
+/**
+   A diamond node that is filled with a color.
+*/
+public class DiamondNode implements Node
+{
+	/**
+    Construct a circle node with a given size and color.
+    @param aColor the fill color
+	 */
+	public DiamondNode(Color aColor)
+	{
+	   size = DEFAULT_SIZE;
+	   x = 0;
+	   y = 0;
+	  color = aColor;
+	}
+	
+	@Override
+	public void draw(Graphics2D g2) {
+	      //Color oldColor = g2.getColor();
+	      //g2.setColor(oldColor);
+		
+	      g2.draw(new Line2D.Double(0, size/2, size/2, 0));
+	      g2.draw(new Line2D.Double(size/2, size, 0, size/2));
+	      g2.draw(new Line2D.Double(size, size/2, size/2, size));
+	      g2.draw(new Line2D.Double(size/2, 0, size, size/2));
+		
+	}
+
+	@Override
+	public void translate(double dx, double dy) {
+		x += dx;
+	    y += dy;
+		
+	}
+
+	@Override
+	public boolean contains(Point2D p) {
+		Ellipse2D diamond = new Ellipse2D.Double(
+	            x, y, size/2, size/2);
+	      return diamond.contains(p);
+	
+	}
+
+	@Override
+	public Point2D getConnectionPoint(Point2D other) {
+		 double centerX = x + size / 2;
+	      double centerY = y + size / 2;
+	      double dx = other.getX() - centerX;
+	      double dy = other.getY() - centerY;
+	      double distance = Math.sqrt(dx * dx + dy * dy);
+	      if (distance == 0) return other;
+	      else return new Point2D.Double(
+	            centerX + dx * (size / 2) / distance,
+	            centerY + dy * (size / 2) / distance);
+	}
+
+	@Override
+	public Rectangle2D getBounds() {
+		 return new Rectangle2D.Double(
+		            x, y, size, size);
+	}
+	
+	public void setColor(Color aColor)
+    {
+       color = aColor;
+    }
+
+    public Color getColor()
+    {
+       return color;
+    }
+	
+	public Object clone()
+	   {
+	      try
+	      {
+	         return super.clone();
+	      }
+	      catch (CloneNotSupportedException exception)
+	      {
+	         return null;
+	      }
+	   }
+	private double x;
+    private double y;
+    private double size;
+    private Color color;  
+    private static final int DEFAULT_SIZE = 20;
+}

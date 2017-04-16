@@ -15,10 +15,10 @@ public class StudentTest
    public void setUp() throws Exception
    {
       heap = new MaxHeap(10);
-      heap.insert(new Student("Susan", 60, 3.5));
-      heap.insert(new Student("Ben", 70, 3.4));
-      heap.insert(new Student("Reed", 120, 4.0));
-      heap.insert(new Student("Johnny", 50, 1.2));
+      heap.insert(new Student("Susan", 60, 3.5, 1));
+      heap.insert(new Student("Ben", 70, 3.4, 2));
+      heap.insert(new Student("Reed", 120, 4.0, 3));
+      heap.insert(new Student("Johnny", 50, 1.2, 4));
    }
 
    @Test
@@ -43,11 +43,11 @@ public class StudentTest
    public void setUp3() throws Exception
    {
       heap = new MaxHeap(10);
-      heap.insert(new Student("Susan", 60, 3.5));
-      heap.insert(new Student("Ben", 70, 3.4));
-      heap.insert(new Student("Reed", 120, 4.0));
-      heap.insert(new Student("Johnny", 50, 1.2));
-      heap.insert(new Student("Reed", 120, 3.8));
+      heap.insert(new Student("Susan", 60, 3.5, 5));
+      heap.insert(new Student("Ben", 70, 3.4, 6));
+      heap.insert(new Student("Reed", 120, 4.0, 7));
+      heap.insert(new Student("Johnny", 50, 1.2, 8));
+      heap.insert(new Student("Reed", 120, 3.8, 9));
    }
 
    @Test

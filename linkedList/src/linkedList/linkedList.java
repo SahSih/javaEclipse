@@ -1,12 +1,11 @@
 package linkedList;
 
-import java.util.List;
 
 public class linkedList {
 	public static class LinkedList {
 		public Node head;
 		
-		static class Node {
+	    static class Node {
 			int data;
 			Node next;
 			Node(int d) {
@@ -109,7 +108,18 @@ public class linkedList {
 		System.out.println(recurCount(list.head));
 	}
 	
-	public static void 
+	public static void check(LinkedList list, int x) {
+		LinkedList.Node temp = list.head;
+		while (temp != null) {
+			if (temp.data == x) System.out.println("true");
+			temp = temp.next;
+		}
+		System.out.println("false");
+	}
+	
+	public static void swap(int x, int y, LinkedList list) {
+		
+	}
 	
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
@@ -118,21 +128,35 @@ public class linkedList {
 		LinkedList.Node second = new LinkedList.Node(2);
 		LinkedList.Node third = new LinkedList.Node(3);
 		
+		//1, 2, 3
 		list.head.next = second;
 		second.next = third;
 		third.next = null;
 		
+		//4, 1, 2, 3
 		push(4, list);
+		//4, 1, 2, 5, 3
 		insertAfter(second, 5, list);
+		//4, 1, 2, 5, 3, 6
 		append(list, 6);
+		//4, 1, 7, 2, 5, 3, 6
 		insertBefore(second, 7, list);
+		//4, 1, 7, 2, 5, 3
 		deleteNode(6, list);
+		//4, 1, 7, 2, 5
 		delPosition(5, list);
 		
+		//5 elements
 		getCount(list);
 		recurCountRes(list);
 		
+		//3 is not exist 4, 1, 7, 2, 5
+		check(list, 3);
 		
+		//print list
 		printList(list);	
+		
+		swap(4, 5, list);
+		printList(list);
 	}
 }

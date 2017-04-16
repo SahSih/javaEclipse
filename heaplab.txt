@@ -1,0 +1,16 @@
+1: Linear-time build time  = 10007147
+	Time per student = 1000
+	Not Stable
+2: for 100000 
+	Linear-time build time  = 22005907
+	Time per student = 220
+	for 1000000
+	Linear-time build time  = 76768979
+	Time per student = 76
+	It decreased.
+3: Pass
+4:  Linear-time build time  = 125148568
+	Time per student = 125
+	Iterated-insertion build time  = 32051985
+	Time per student = 32
+5: 
