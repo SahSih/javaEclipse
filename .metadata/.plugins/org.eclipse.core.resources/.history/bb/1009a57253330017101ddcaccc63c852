@@ -1,0 +1,25 @@
+package persistentFrame;
+2
+3 import java.awt.*;
+4 import java.awt.event.*;
+5 import java.beans.*;
+6 import java.io.*;
+7 import javax.swing.*;
+8
+9 /**
+10 * This program demonstrates the use of an XML encoder and decoder to save and restore a frame.
+11 * @version 1.01 2007-10-03
+12 * @author Cay Horstmann
+13 */
+14 public class PersistentFrameTest
+15 {
+16 private static JFileChooser chooser;
+17 private JFrame frame;
+18
+19 public static void main(String[] args)
+20 {
+21 chooser = new JFileChooser();
+22 chooser.setCurrentDirectory(new File("."));
+23 PersistentFrameTest test = new PersistentFrameTest();
+24 test.init();
+25 }

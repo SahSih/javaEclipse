@@ -1,0 +1,5 @@
+package com.horstmann.violet.framework;
+
+public class FileReader {
+
+}

@@ -1,0 +1,20 @@
+package persistentFrame;
+
+ import java.awt.*;
+ import java.awt.event.*;
+ import java.beans.*;
+ import java.io.*;
+ import javax.swing.*;
+
+ public class PersistentFrameTest
+ {
+ private static JFileChooser chooser;
+ private JFrame frame;
+
+ public static void main(String[] args)
+ {
+ chooser = new JFileChooser();
+ chooser.setCurrentDirectory(new File("."));
+ PersistentFrameTest test = new PersistentFrameTest();
+ test.init();
+ }

@@ -12,7 +12,8 @@ public class SimpleGraph extends Graph
          {
             new CircleNode(Color.BLACK),
             new CircleNode(Color.WHITE),
-            new DiamondNode(Color.BLACK)
+            new DiamondNode(),
+            new SquareNode()
          };
       return nodeTypes;
    }
@@ -22,8 +23,8 @@ public class SimpleGraph extends Graph
       Edge[] edgeTypes = 
          {
             new LineEdge(),
-            new HVEdge(),
-            new VHEdge()
+            //new HVEdge(),
+            //new VHEdge()
          };
       return edgeTypes;
    }

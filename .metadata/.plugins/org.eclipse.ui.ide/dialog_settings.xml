@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/chrispeng/fxviolet/com/horstmann/violet"/>
+	</list>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/chrispeng/fxviolet/com/horstmann"/>
 			<item value="/Users/chrispeng/Desktop/fishbowl_signup"/>
 			<item value="/Users/chrispeng/Desktop/CS151 Object-Oriented Design_files/CS151-Spring-TianPeng-009802104/lab16"/>
 		</list>
